@@ -46,13 +46,20 @@ def get_region_logic():
     if contoury == "USA":
         return f"Country: {contoury} | Language: English"
     elif contoury == "India":
-        # India 💀 - Triggering the randomized language sub-logic
+       
         return f"Country: {contoury} | Language: {random.choice(IndiaLanguages.list)}"
+        with open("lang","rw")as thelang:
+        thelang.write(Language)
+
     else:
         return f"Country: {contoury} | Language: Default/Local"
 
-# Run simulation step
+
 print(get_region_logic())
 print("name: raj")
 sleep 3
 print("current age: 0 *not born yet*")
+with open("country","rw")as thecon:
+    thecon.write(contoury)
+with open("name","rw")as name:
+        name.write("raj")
